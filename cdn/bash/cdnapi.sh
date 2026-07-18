@@ -227,6 +227,9 @@ fi
 if [ $API_SERVER_IP ]; then
   resolve="-k --resolve $API_SERVER_NAME:443:$API_SERVER_IP"
 fi
+if [ $API_SERVER_ALIAS ]; then
+  resolve="-k --connect-to $API_SERVER_NAME:443:$API_SERVER_ALIAS"
+fi
 DATE=`LC_TIME="C" date -u "+%a, %d %b %Y %H:%M:%S GMT"`
 #echo $DATE
 # Generate authentication info
